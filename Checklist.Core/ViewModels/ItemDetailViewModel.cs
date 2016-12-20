@@ -19,13 +19,13 @@ namespace Checklist.Core.ViewModels
 
 		public class Nav
 		{
-			public int Id { get; set; }
+			public int CheckListItemId { get; set; }
 			public int CheckListId { get; set; }
 		}
 
 		public void Init(Nav navigation)
 		{
-			int id = navigation.Id;
+			int id = navigation.CheckListItemId;
 			int checkListId = navigation.CheckListId;
 			if (id == -1)
 			{

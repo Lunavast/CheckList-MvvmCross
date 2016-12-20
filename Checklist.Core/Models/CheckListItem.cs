@@ -8,19 +8,9 @@ namespace Checklist.Core.Models
 	{
 		[PrimaryKey, AutoIncrement]
 		public int Id { set; get; }
-
-		public string Text
-		{
-			get;
-			set;
-		}
-
-		public bool Done
-		{
-			get;
-			set;
-		}
-
 		public int CheckListId { set; get; }
+
+		public string Text { get; set; }
+		public bool Done { get; set; }
 	}
 }

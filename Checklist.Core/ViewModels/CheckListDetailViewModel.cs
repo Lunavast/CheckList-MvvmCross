@@ -17,12 +17,12 @@ namespace Checklist.Core.ViewModels
 		
 		public class Nav
 		{
-			public int Id { get; set; }
+			public int CheckListId { get; set; }
 		}
 		
 		public void Init(Nav navigation)
 		{
-			int id = navigation.Id;
+			int id = navigation.CheckListId;
 			if (id == -1)
 			{
 				_mode = Mode.Adding;
@@ -72,11 +72,6 @@ namespace Checklist.Core.ViewModels
 				_cancelCommand = _cancelCommand ?? new MvxCommand(DoCancel);
 				return _cancelCommand;
 			}
-		}
-
-		private void DoItemSelected()
-		{
-			// do action
 		}
 
 		private void DoCancel()

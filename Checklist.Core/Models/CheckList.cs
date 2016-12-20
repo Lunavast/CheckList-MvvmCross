@@ -10,12 +10,7 @@ namespace Checklist.Core.Models
 		[PrimaryKey, AutoIncrement]
 		public int Id { set; get; }
 
-		public string Name
-		{
-			get;
-			set;
-		}
-
+		public string Name { get; set; }
 		public int ToDo { get; set; }
 	}
 }

@@ -21,12 +21,12 @@ namespace Checklist.Core.ViewModels
 
 		public class Nav
 		{
-			public int Id { get; set; }
+			public int CheckListId { get; set; }
 		}
 
 		public void Init(Nav navigation)
 		{
-			int id = navigation.Id;
+			int id = navigation.CheckListId;
 			_checkList = DataService.GetCheckList(id);
 			Title = _checkList.Name;
 			if (_checkList != null)
@@ -67,7 +67,7 @@ namespace Checklist.Core.ViewModels
 			{
 				return new MvxCommand(() => ShowViewModel<ItemDetailViewModel>(new ItemDetailViewModel.Nav()
 				{
-					Id = -1,
+					CheckListItemId = -1,
 					CheckListId = _checkList.Id
 				}));
 			}
@@ -79,7 +79,7 @@ namespace Checklist.Core.ViewModels
 			{
 				return new MvxCommand<CheckListItem>(i => ShowViewModel<ItemDetailViewModel>(new ItemDetailViewModel.Nav()
 				{
-					Id = i.Id,
+					CheckListItemId = i.Id,
 					CheckListId = _checkList.Id
 				}));
 			}

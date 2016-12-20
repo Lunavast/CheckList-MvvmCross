@@ -36,11 +36,6 @@ namespace Checklist.Core.Services
 			_messenger.Publish(new DataChangeMessage(this));
 		}
 
-		//public List<CheckListItem> GetItemsList()
-		//{
-		//	return _repository.AllItems();
-		//}
-
 		public CheckListItem GetItem(int id)
 		{
 			return _repository.GetItem(id);

@@ -44,7 +44,7 @@ namespace Checklist.Core.ViewModels
 			{
 				return new MvxCommand(() => ShowViewModel<CheckListDetailViewModel>(new CheckListDetailViewModel.Nav()
 				{
-					Id = -1
+					CheckListId = -1
 				}));
 			}
 		}
@@ -55,7 +55,7 @@ namespace Checklist.Core.ViewModels
 			{
 				return new MvxCommand<CheckList>(i => ShowViewModel<CheckListDetailViewModel>(new CheckListDetailViewModel.Nav()
 				{
-					Id = i.Id
+					CheckListId = i.Id
 				}));
 			}
 		}
@@ -66,10 +66,9 @@ namespace Checklist.Core.ViewModels
 			{
 				return new MvxCommand<CheckList>(i => ShowViewModel<CheckListViewModel>(new CheckListViewModel.Nav()
 				{
-					Id = i.Id
+					CheckListId = i.Id
 				}));
 			}
 		}
-
 	}
 }

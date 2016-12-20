@@ -23,11 +23,6 @@ namespace Checklist.Core.Services
 			_connection.Insert(checkListItem);
 		}
 
-		//public List<CheckListItem> AllItems()
-		//{
-		//	return _connection.Table<CheckListItem>().ToList();
-		//}
-
 		public void Delete(CheckListItem checkListItem)
 		{
 			_connection.Delete(checkListItem);

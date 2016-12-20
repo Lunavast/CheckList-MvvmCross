@@ -6,12 +6,9 @@ namespace Checklist.Core.Services
 {
 	public interface IDataService
 	{
-		//List<CheckListItem> GetItemsList();
-
 		void AddItem(CheckListItem item);
 		void DeleteItem(CheckListItem item);
 		void UpdateItem(CheckListItem item);
-
 		CheckListItem GetItem(int id);
 
 		List<CheckList> GetCheckListsList();
@@ -19,8 +16,8 @@ namespace Checklist.Core.Services
 		void AddCheckList(CheckList checkList);
 		void DeleteCheckList(CheckList checkList);
 		void UpdateCheckList(CheckList checkList);
-
 		CheckList GetCheckList(int id);
+
 		List<CheckListItem> GetCheckListItems(CheckList checkList);
 		List<CheckListItem> GetToDoCheckListItems(CheckList checkList);
 	}
