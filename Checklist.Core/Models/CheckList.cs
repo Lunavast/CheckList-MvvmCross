@@ -1,26 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
 using SQLite;
 
 namespace Checklist.Core.Models
 {
-	[Table("checklistItem")]
-	public class CheckListItem
+	[Table("checklist")]
+	public class CheckList
 	{
 		[PrimaryKey, AutoIncrement]
 		public int Id { set; get; }
 
-		public string Text
+		public string Name
 		{
 			get;
 			set;
 		}
 
-		public bool Done
-		{
-			get;
-			set;
-		}
-
-		public int CheckListId { set; get; }
+		public int ToDo { get; set; }
 	}
 }

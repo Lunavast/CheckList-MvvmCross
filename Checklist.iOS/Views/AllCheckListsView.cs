@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using Checklist.Core.Models;
-using Checklist.Core.Services;
 using Checklist.Core.ViewModels;
 using Checklist.iOS.Cells;
 using Foundation;
@@ -13,15 +10,15 @@ using UIKit;
 
 namespace Checklist.iOS.Views
 {
-	public partial class CheckListView : MvxViewController
+	public partial class AllCheckListsView : MvxViewController
 	{
-		public new CheckListViewModel ViewModel
+		public new AllCheckListsViewModel ViewModel
 		{
-			get { return (CheckListViewModel)base.ViewModel; }
+			get { return (AllCheckListsViewModel)base.ViewModel; }
 			set { base.ViewModel = value; }
 		}
 
-		public CheckListView() : base("CheckListView", null)
+		public AllCheckListsView() : base("AllCheckListsView", null)
 		{
 		}
 
@@ -29,25 +26,16 @@ namespace Checklist.iOS.Views
 		{
 			base.ViewDidLoad();
 			// Perform any additional setup after loading the view, typically from a nib.
-			this.Title = ViewModel.Title;
-
 			ConfigureNavigationView();
-
 			ConfigureTableView();
-		}
-
-		public override void ViewWillDisappear(bool animated)
-		{
-			base.ViewWillDisappear(animated);
-			ViewModel.UpdateNewTasksCommand.Execute(null);
 		}
 
 		private void ConfigureTableView()
 		{
-			var TableViewSource = new CheckListSource(ViewModel, TableView, CheckListItemCell.Key, CheckListItemCell.Key);
+			var TableViewSource = new AllCheckListsSource(ViewModel, TableView, CheckListCell.Key, CheckListCell.Key);
 			TableView.Source = TableViewSource;
 
-			var set = this.CreateBindingSet<CheckListView, CheckListViewModel>();
+			var set = this.CreateBindingSet<AllCheckListsView, AllCheckListsViewModel>();
 			set.Bind(TableViewSource).To(vm => vm.Items);
 			set.Bind(TableViewSource).For(s => s.SelectionChangedCommand).To(vm => vm.ItemSelectedCommand);
 			set.Bind(TableViewSource).For(s => s.AccessoryTappedCommand).To(vm => vm.EditItemCommand);
@@ -58,6 +46,8 @@ namespace Checklist.iOS.Views
 
 		private void ConfigureNavigationView()
 		{
+			this.Title = "Checklists";
+
 			var PlusItem = new UIBarButtonItem(UIBarButtonSystemItem.Add, AddItemHandler);
 			this.NavigationItem.RightBarButtonItem = PlusItem;
 		}
@@ -67,25 +57,19 @@ namespace Checklist.iOS.Views
 			ViewModel.PopItemCommand.Execute(null);
 		}
 
-		void HandleAction(UITableView arg1, UITableViewCellEditingStyle arg2, NSIndexPath arg3)
+		private class AllCheckListsSource : MvxSimpleTableViewSource
 		{
-
-		}
-
-		private class CheckListSource : MvxSimpleTableViewSource
-		{
-			private readonly CheckListViewModel _vm;
-			public CheckListSource(CheckListViewModel vm, UITableView tableView, string nibName, string cellIdentifier = null) : base(tableView, nibName, cellIdentifier)
+			private readonly AllCheckListsViewModel _vm;
+			public AllCheckListsSource(AllCheckListsViewModel vm, UITableView tableView, string nibName, string cellIdentifier = null) : base(tableView, nibName, cellIdentifier)
 			{
 				_vm = vm;
 			}
 
 			public override void CommitEditingStyle(UITableView tableView, UITableViewCellEditingStyle editingStyle, NSIndexPath indexPath)
 			{
-				CheckListItem item = _vm.Items[indexPath.Row];
-				_vm.DataService.DeleteItem(item);	
+				CheckList item = _vm.Items[indexPath.Row];
+				_vm.DataService.DeleteCheckList(item);
 			}
 		}
 	}
 }
-

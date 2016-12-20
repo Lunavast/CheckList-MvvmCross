@@ -11,7 +11,7 @@ namespace Checklist.Core
 			Mvx.LazyConstructAndRegisterSingleton<IDataService, DataService>();
 			Mvx.LazyConstructAndRegisterSingleton<IRepository, Repository>();
 
-            RegisterAppStart<ViewModels.CheckListViewModel>();
+			RegisterAppStart<ViewModels.AllCheckListsViewModel>();
         }
     }
 }

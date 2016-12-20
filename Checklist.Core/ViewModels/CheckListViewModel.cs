@@ -18,7 +18,29 @@ namespace Checklist.Core.ViewModels
 		{
 			get { return _dataService; }
 		}
-		private readonly MvxSubscriptionToken _token;
+
+		public class Nav
+		{
+			public int Id { get; set; }
+		}
+
+		public void Init(Nav navigation)
+		{
+			int id = navigation.Id;
+			_checkList = DataService.GetCheckList(id);
+			Title = _checkList.Name;
+			if (_checkList != null)
+				Items = DataService.GetCheckListItems(_checkList);
+		}
+
+		private string _title;
+		public string Title
+		{
+			get { return _title; }
+			set { _title = value; RaisePropertyChanged(() => Title); }
+		}
+
+		private CheckList _checkList;
 
 		private List<CheckListItem> _items;
 		public List<CheckListItem> Items
@@ -26,27 +48,17 @@ namespace Checklist.Core.ViewModels
 			get { return _items; }
 			set { _items = value; RaisePropertyChanged(() => Items); }
 		}
+		private readonly MvxSubscriptionToken _token;
 
 		public CheckListViewModel(IDataService dataService, IMvxMessenger messenger)
 		{
 			_dataService = dataService;
-			_items = _dataService.GetItemsList();
 			_token = messenger.Subscribe<DataChangeMessage>(OnDataChange);
 		}
 
 		void OnDataChange(DataChangeMessage obj)
 		{
-			Items = _dataService.GetItemsList();
-		}
-
-		public void AddItem(CheckListItem item)
-		{
-			_dataService.AddItem(item);
-		}
-
-		public void DeleteItem(CheckListItem item)
-		{
-			_dataService.DeleteItem(item);
+			Items = _dataService.GetCheckListItems(_checkList);
 		}
 
 		public ICommand PopItemCommand
@@ -55,7 +67,8 @@ namespace Checklist.Core.ViewModels
 			{
 				return new MvxCommand(() => ShowViewModel<ItemDetailViewModel>(new ItemDetailViewModel.Nav()
 				{
-					Id = -1
+					Id = -1,
+					CheckListId = _checkList.Id
 				}));
 			}
 		}
@@ -66,7 +79,8 @@ namespace Checklist.Core.ViewModels
 			{
 				return new MvxCommand<CheckListItem>(i => ShowViewModel<ItemDetailViewModel>(new ItemDetailViewModel.Nav()
 				{
-					Id = i.Id
+					Id = i.Id,
+					CheckListId = _checkList.Id
 				}));
 			}
 		}
@@ -78,10 +92,25 @@ namespace Checklist.Core.ViewModels
 				return new MvxCommand<CheckListItem>(i =>
 				{
 					i.Done = !i.Done;
-					_dataService.UpdateItem(i);
-					Debug.WriteLine(i.Done);
+					DataService.UpdateItem(i);
 				});
 			}
+		}
+
+		private MvxCommand _updateNewTasksCommand;
+		public ICommand UpdateNewTasksCommand
+		{
+			get
+			{
+				_updateNewTasksCommand = _updateNewTasksCommand ?? new MvxCommand(DoUpdateNewTasks);
+				return _updateNewTasksCommand;
+			}
+		}
+
+		private void DoUpdateNewTasks()
+		{
+			_checkList.ToDo = DataService.GetToDoCheckListItems(_checkList).Count;
+			DataService.UpdateCheckList(_checkList);
 		}
 	}
 }

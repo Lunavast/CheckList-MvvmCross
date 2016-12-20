@@ -6,40 +6,35 @@ using MvvmCross.Core.ViewModels;
 
 namespace Checklist.Core.ViewModels
 {
-	enum Mode { Adding, Editing };
-
-	public class ItemDetailViewModel : MvxViewModel
+	public class CheckListDetailViewModel : MvxViewModel
 	{
 		private Mode _mode;
 		private readonly IDataService _dataService;
-		public ItemDetailViewModel(IDataService dataService)
+		public CheckListDetailViewModel(IDataService dataService)
 		{
 			_dataService = dataService;
 		}
-
+		
 		public class Nav
 		{
 			public int Id { get; set; }
-			public int CheckListId { get; set; }
 		}
-
+		
 		public void Init(Nav navigation)
 		{
 			int id = navigation.Id;
-			int checkListId = navigation.CheckListId;
 			if (id == -1)
 			{
 				_mode = Mode.Adding;
-				Item = new CheckListItem();
-				Item.CheckListId = checkListId;
-				Title = "Add new item";
+				Item = new CheckList();
+				Title = "Add new checklist";
 			}
 			else
 			{
 				_mode = Mode.Editing;
-				Item = _dataService.GetItem(id);
-				Text = Item.Text;
-				Title = "Edit item";
+				Item = _dataService.GetCheckList(id);
+				Text = Item.Name;
+				Title = "Edit checklist";
 			}
 		}
 
@@ -59,11 +54,11 @@ namespace Checklist.Core.ViewModels
 		public string Text
 		{
 			get { return _text; }
-			set { _text = value; Item.Text = value; RaisePropertyChanged(() => Text); RaisePropertyChanged(() => EnableDone);}
+			set { _text = value; Item.Name = value; RaisePropertyChanged(() => Text); RaisePropertyChanged(() => EnableDone); }
 		}
 
-		private CheckListItem _item;
-		public CheckListItem Item
+		private CheckList _item;
+		public CheckList Item
 		{
 			get { return _item; }
 			set { _item = value; RaisePropertyChanged(() => EnableDone); RaisePropertyChanged(() => Text); }
@@ -77,6 +72,11 @@ namespace Checklist.Core.ViewModels
 				_cancelCommand = _cancelCommand ?? new MvxCommand(DoCancel);
 				return _cancelCommand;
 			}
+		}
+
+		private void DoItemSelected()
+		{
+			// do action
 		}
 
 		private void DoCancel()
@@ -98,11 +98,11 @@ namespace Checklist.Core.ViewModels
 		{
 			if (_mode == Mode.Adding)
 			{
-				_dataService.AddItem(Item);
+				_dataService.AddCheckList(Item);
 			}
-			else 
-			{ 
-				_dataService.UpdateItem(Item);	
+			else
+			{
+				_dataService.UpdateCheckList(Item);
 			}
 			Close(this);
 		}

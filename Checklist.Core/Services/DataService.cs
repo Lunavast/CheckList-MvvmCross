@@ -36,14 +36,52 @@ namespace Checklist.Core.Services
 			_messenger.Publish(new DataChangeMessage(this));
 		}
 
-		public List<CheckListItem> GetItemsList()
-		{
-			return _repository.All();
-		}
+		//public List<CheckListItem> GetItemsList()
+		//{
+		//	return _repository.AllItems();
+		//}
 
 		public CheckListItem GetItem(int id)
 		{
-			return _repository.Get(id);
+			return _repository.GetItem(id);
+		}
+
+		public List<CheckList> GetCheckListsList()
+		{
+			return _repository.AllCheckLists();
+		}
+
+		public void AddCheckList(CheckList checkList)
+		{
+			_repository.Add(checkList);
+			_messenger.Publish(new DataChangeMessage(this));
+		}
+
+		public void DeleteCheckList(CheckList checkList)
+		{
+			_repository.Delete(checkList);
+			_messenger.Publish(new DataChangeMessage(this));
+		}
+
+		public void UpdateCheckList(CheckList checkList)
+		{
+			_repository.Update(checkList);
+			_messenger.Publish(new DataChangeMessage(this));
+		}
+
+		public CheckList GetCheckList(int id)
+		{
+			return _repository.GetCheckList(id);
+		}
+
+		public List<CheckListItem> GetCheckListItems(CheckList checkList)
+		{
+			return _repository.GetCheckListItems(checkList);
+		}
+
+		public List<CheckListItem> GetToDoCheckListItems(CheckList checkList)
+		{
+			return _repository.GetToDoCheckListItems(checkList);
 		}
 	}
 }
