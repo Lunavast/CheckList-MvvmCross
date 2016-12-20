@@ -1,0 +1,22 @@
+﻿<Properties StartupConfiguration="{48F91551-02AC-4065-AB63-87D662BF5D64}|Default">
+  <MonoDevelop.Ide.ItemProperties.Checklist.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.BDA67792-0CAF-49A4-B103-11A685DF6253" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Checklist.iOS/Views/CheckListView.cs">
+    <Files>
+      <File FileName="Checklist.Core/ViewModels/ItemDetailViewModel.cs" Line="32" Column="16" />
+      <File FileName="Checklist.iOS/Views/ItemDetailView.cs" Line="42" Column="4" />
+      <File FileName="Checklist.iOS/Views/CheckListView.cs" Line="80" Column="4" />
+      <File FileName="Checklist.Core/Models/CheckListItem.cs" Line="17" Column="19" />
+      <File FileName="Checklist.Core/Services/IRepository.cs" Line="18" Column="1" />
+      <File FileName="Checklist.Core/Services/Repository.cs" Line="44" Column="3" />
+      <File FileName="Checklist.Core/Services/IDataService.cs" Line="18" Column="2" />
+      <File FileName="Checklist.Core/Services/DataService.cs" Line="28" Column="4" />
+      <File FileName="Checklist.Core/ViewModels/CheckListViewModel.cs" Line="84" Column="5" />
+      <File FileName="Checklist.iOS/Views/Cells/CheckListItemCell.cs" Line="32" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
