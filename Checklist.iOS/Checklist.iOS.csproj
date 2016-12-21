@@ -173,6 +173,15 @@
     <ImageAsset Include="Assets.xcassets\Trips.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Trips.imageset\Trips%402x.png.png" />
     <ImageAsset Include="Assets.xcassets\Trips.imageset\Trips%403x.png.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-152.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-180.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />

@@ -23,17 +23,20 @@ namespace Checklist.iOS.Views
 
 		[Outlet]
 		UIKit.UITextField TextField { get; set; }
+
+		[Outlet]
+		UIKit.NSLayoutConstraint TopConstraint { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (TextField != null) {
-				TextField.Dispose ();
-				TextField = null;
+			if (TopConstraint != null) {
+				TopConstraint.Dispose ();
+				TopConstraint = null;
 			}
 
-			if (IconNameLabel != null) {
-				IconNameLabel.Dispose ();
-				IconNameLabel = null;
+			if (ChooseIconButton != null) {
+				ChooseIconButton.Dispose ();
+				ChooseIconButton = null;
 			}
 
 			if (IconImageView != null) {
@@ -41,9 +44,14 @@ namespace Checklist.iOS.Views
 				IconImageView = null;
 			}
 
-			if (ChooseIconButton != null) {
-				ChooseIconButton.Dispose ();
-				ChooseIconButton = null;
+			if (IconNameLabel != null) {
+				IconNameLabel.Dispose ();
+				IconNameLabel = null;
+			}
+
+			if (TextField != null) {
+				TextField.Dispose ();
+				TextField = null;
 			}
 		}
 	}

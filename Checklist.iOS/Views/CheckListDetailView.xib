@@ -15,6 +15,7 @@
                 <outlet property="IconImageView" destination="fnv-Uv-dP7" id="oNU-pL-Ffl"/>
                 <outlet property="IconNameLabel" destination="6qR-6n-iRX" id="atw-Eu-U3L"/>
                 <outlet property="TextField" destination="onB-5b-Gvb" id="d60-tu-KQr"/>
+                <outlet property="TopConstraint" destination="yyl-U8-EAa" id="yoP-ag-MmP"/>
                 <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
             </connections>
         </placeholder>
@@ -102,6 +103,7 @@
                 <constraint firstItem="LVh-aa-mAo" firstAttribute="top" secondItem="2" secondAttribute="top" constant="88" id="yyl-U8-EAa"/>
                 <constraint firstAttribute="trailing" secondItem="LVh-aa-mAo" secondAttribute="trailing" id="z1C-YH-iV1"/>
             </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
     </objects>
