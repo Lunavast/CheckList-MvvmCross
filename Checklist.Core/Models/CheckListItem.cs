@@ -12,5 +12,7 @@ namespace Checklist.Core.Models
 
 		public string Text { get; set; }
 		public bool Done { get; set; }
+
+		public DateTime? Reminder { get; set; }
 	}
 }

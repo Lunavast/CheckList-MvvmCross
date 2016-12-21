@@ -59,6 +59,8 @@ namespace Checklist.iOS.Views
 			set.Bind(DoneItem).For(b => b.Enabled).To(vm => vm.EnableDone);
 			set.Bind(ChooseIconButton).To(vm => vm.ChooseIconCommand);
 			set.Apply();
+
+
 		}
 
 		private void ConfigureNavigationView()

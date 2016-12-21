@@ -13,10 +13,42 @@ namespace Checklist.iOS.Views
 	partial class ItemDetailView
 	{
 		[Outlet]
+		UIKit.UIDatePicker DatePicker { get; set; }
+
+		[Outlet]
+		UIKit.UIView DateView { get; set; }
+
+		[Outlet]
+		UIKit.UILabel DueDateLabel { get; set; }
+
+		[Outlet]
+		UIKit.UISwitch ReminderSwitch { get; set; }
+
+		[Outlet]
 		UIKit.UITextField TextField { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (DatePicker != null) {
+				DatePicker.Dispose ();
+				DatePicker = null;
+			}
+
+			if (DueDateLabel != null) {
+				DueDateLabel.Dispose ();
+				DueDateLabel = null;
+			}
+
+			if (ReminderSwitch != null) {
+				ReminderSwitch.Dispose ();
+				ReminderSwitch = null;
+			}
+
+			if (DateView != null) {
+				DateView.Dispose ();
+				DateView = null;
+			}
+
 			if (TextField != null) {
 				TextField.Dispose ();
 				TextField = null;

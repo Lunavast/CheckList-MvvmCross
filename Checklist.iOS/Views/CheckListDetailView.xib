@@ -25,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVh-aa-mAo">
-                    <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                    <rect key="frame" x="0.0" y="80" width="375" height="44"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Checklist name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="onB-5b-Gvb">
                             <rect key="frame" x="16" y="7" width="343" height="30"/>
@@ -46,7 +46,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I4a-PI-EUs">
-                    <rect key="frame" x="0.0" y="148" width="375" height="44"/>
+                    <rect key="frame" x="0.0" y="140" width="375" height="44"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qR-6n-iRX">
                             <rect key="frame" x="16" y="12" width="27.5" height="21"/>
@@ -100,7 +100,7 @@
                 <constraint firstItem="LVh-aa-mAo" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="QJr-s7-MSE"/>
                 <constraint firstAttribute="trailing" secondItem="I4a-PI-EUs" secondAttribute="trailing" id="e2q-Oi-qd9"/>
                 <constraint firstItem="I4a-PI-EUs" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="v5i-XX-YTc"/>
-                <constraint firstItem="LVh-aa-mAo" firstAttribute="top" secondItem="2" secondAttribute="top" constant="88" id="yyl-U8-EAa"/>
+                <constraint firstItem="LVh-aa-mAo" firstAttribute="top" secondItem="2" secondAttribute="top" constant="80" id="yyl-U8-EAa"/>
                 <constraint firstAttribute="trailing" secondItem="LVh-aa-mAo" secondAttribute="trailing" id="z1C-YH-iV1"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

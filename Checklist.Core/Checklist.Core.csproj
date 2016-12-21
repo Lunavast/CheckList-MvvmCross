@@ -46,6 +46,7 @@
     <Compile Include="ViewModels\ChooseIconViewModel.cs" />
     <Compile Include="Models\Icon.cs" />
     <Compile Include="Messenger\IconChangeMessage.cs" />
+    <Compile Include="Converters\DueDateValueConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Platform">

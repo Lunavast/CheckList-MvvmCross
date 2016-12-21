@@ -199,6 +199,8 @@
     <Folder Include="Assets.xcassets\Photos.imageset\" />
     <Folder Include="Assets.xcassets\Trips.imageset\" />
     <Folder Include="Converters\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -259,6 +261,9 @@
       <DependentUpon>IconCell.cs</DependentUpon>
     </Compile>
     <Compile Include="Converters\NameToImageValueConverter.cs" />
+    <Compile Include="Extensions\NSDateExtiensions.cs" />
+    <Compile Include="Services\LocalNotificationService.cs" />
+    <Compile Include="Services\ILocalNotificationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Checklist.Core\Checklist.Core.csproj">

@@ -1,21 +1,25 @@
 ﻿<Properties StartupConfiguration="{48F91551-02AC-4065-AB63-87D662BF5D64}|Default">
   <MonoDevelop.Ide.ItemProperties.Checklist.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.BDA67792-0CAF-49A4-B103-11A685DF6253" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Checklist.iOS/Views/CheckListView.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Checklist.iOS/Services/ILocalNotificationService.cs">
     <Files>
       <File FileName="Checklist.Core/ViewModels/ChooseIconViewModel.cs" Line="49" Column="57" />
       <File FileName="Checklist.Core/ViewModels/CheckListDetailViewModel.cs" Line="23" Column="28" />
       <File FileName="Checklist.Core/ViewModels/CheckListViewModel.cs" Line="90" Column="8" />
-      <File FileName="Checklist.iOS/Views/CheckListDetailView.cs" Line="41" Column="4" />
+      <File FileName="Checklist.iOS/Views/CheckListDetailView.cs" Line="63" Column="4" />
       <File FileName="Checklist.Core/ViewModels/ItemDetailViewModel.cs" Line="45" Column="16" />
-      <File FileName="Checklist.iOS/Views/ItemDetailView.cs" Line="39" Column="16" />
+      <File FileName="Checklist.iOS/Views/ItemDetailView.cs" Line="85" Column="4" />
       <File FileName="Checklist.iOS/Views/ChooseIconView.cs" Line="21" Column="4" />
-      <File FileName="Checklist.iOS/Views/CheckListView.cs" Line="68" Column="1" />
+      <File FileName="Checklist.iOS/Views/CheckListView.cs" Line="81" Column="5" />
       <File FileName="Checklist.iOS/Converters/NameToImageValueConverter.cs" Line="11" Column="4" />
       <File FileName="Checklist.iOS/Views/Cells/IconCell.cs" Line="33" Column="1" />
       <File FileName="Checklist.iOS/Views/Cells/CheckListCell.cs" Line="31" Column="2" />
       <File FileName="Checklist.iOS/Info.plist" />
       <File FileName="Checklist.iOS/Entitlements.plist" />
       <File FileName="Checklist.iOS/Views/AllCheckListsView.cs" Line="74" Column="3" />
+      <File FileName="Checklist.Core/Converters/DueDateValueConverter.cs" Line="13" Column="5" />
+      <File FileName="Checklist.Core/Converters/ItemsValueConverter.cs" Line="23" Column="3" />
+      <File FileName="Checklist.iOS/Services/LocalNotificationService.cs" Line="10" Column="10" />
+      <File FileName="Checklist.iOS/Services/ILocalNotificationService.cs" Line="16" Column="12" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

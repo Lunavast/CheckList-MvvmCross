@@ -5,6 +5,7 @@ using Checklist.Core.Models;
 using Checklist.Core.Services;
 using Checklist.Core.ViewModels;
 using Checklist.iOS.Cells;
+using Checklist.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
@@ -77,7 +78,8 @@ namespace Checklist.iOS.Views
 			public override void CommitEditingStyle(UITableView tableView, UITableViewCellEditingStyle editingStyle, NSIndexPath indexPath)
 			{
 				CheckListItem item = _vm.Items[indexPath.Row];
-				_vm.DataService.DeleteItem(item);	
+				new LocalNotificationService().CancelNotification(item);
+				_vm.DataService.DeleteItem(item);
 			}
 		}
 	}
