@@ -19,7 +19,7 @@ namespace Checklist.Core.Services
 		CheckList GetCheckList(int id);
 
 		List<CheckListItem> GetCheckListItems(CheckList checkList);
-		List<CheckListItem> GetToDoCheckListItems(CheckList checkList);
+		int GetToDoCountCheckListItems(CheckList checkList);
 	}
 
 }

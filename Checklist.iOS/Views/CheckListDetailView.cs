@@ -1,7 +1,10 @@
 ﻿using System;
 using Checklist.Core.ViewModels;
+using Foundation;
 using MvvmCross.Binding.BindingContext;
+using MvvmCross.Binding.iOS.Views;
 using MvvmCross.iOS.Views;
+using Checklist.iOS.Converters;
 using UIKit;
 
 namespace Checklist.iOS.Views
@@ -25,15 +28,36 @@ namespace Checklist.iOS.Views
 		{
 			base.ViewDidLoad();
 			// Perform any additional setup after loading the view, typically from a nib.
-
+			BindView();
 			ConfigureNavigationView();
+		}
 
+		public override void ViewWillAppear(bool animated)
+		{
+			base.ViewWillAppear(animated);
 			TextField.BecomeFirstResponder();
 
+			Update();
+		}
+
+		private void Update()
+		{
+			IconImageView.Image = UIImage.FromBundle(ViewModel.Item.IconName);
+			IconNameLabel.Text = ViewModel.Item.IconName;
+		}
+
+		public override void ViewWillDisappear(bool animated)
+		{
+			base.ViewWillDisappear(animated);
+			TextField.ResignFirstResponder();
+		}
+
+		private void BindView()
+		{
 			var set = this.CreateBindingSet<CheckListDetailView, CheckListDetailViewModel>();
 			set.Bind(TextField).To(vm => vm.Text);
 			set.Bind(DoneItem).For(b => b.Enabled).To(vm => vm.EnableDone);
-
+			set.Bind(ChooseIconButton).To(vm => vm.ChooseIconCommand);
 			set.Apply();
 		}
 

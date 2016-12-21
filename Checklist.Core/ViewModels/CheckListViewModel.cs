@@ -32,13 +32,7 @@ namespace Checklist.Core.ViewModels
 			if (_checkList != null)
 				Items = DataService.GetCheckListItems(_checkList);
 		}
-
-		private string _title;
-		public string Title
-		{
-			get { return _title; }
-			set { _title = value; RaisePropertyChanged(() => Title); }
-		}
+		public string Title { get; set; }
 
 		private CheckList _checkList;
 
@@ -109,7 +103,7 @@ namespace Checklist.Core.ViewModels
 
 		private void DoUpdateNewTasks()
 		{
-			_checkList.ToDo = DataService.GetToDoCheckListItems(_checkList).Count;
+			_checkList.ToDo = DataService.GetToDoCountCheckListItems(_checkList);
 			DataService.UpdateCheckList(_checkList);
 		}
 	}

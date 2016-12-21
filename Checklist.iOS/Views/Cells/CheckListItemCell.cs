@@ -21,7 +21,6 @@ namespace Checklist.iOS.Cells
 
 		protected CheckListItemCell(IntPtr handle) : base(handle)
 		{
-			// Note: this .ctor should not contain any initialization logic.
 			this.SelectionStyle = UITableViewCellSelectionStyle.None;
 			this.DelayBind(() =>
 			{

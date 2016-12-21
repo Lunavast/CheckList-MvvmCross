@@ -74,9 +74,9 @@ namespace Checklist.Core.Services
 			return _repository.GetCheckListItems(checkList);
 		}
 
-		public List<CheckListItem> GetToDoCheckListItems(CheckList checkList)
+		public int GetToDoCountCheckListItems(CheckList checkList)
 		{
-			return _repository.GetToDoCheckListItems(checkList);
+			return _repository.GetToDoCountCheckListItems(checkList);
 		}
 	}
 }

@@ -7,7 +7,18 @@ namespace Checklist.Core.Converters
 	{
 		protected override string Convert(int value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
 		{
-			return string.Format("{0} Remaining", value);
+			if (value == -1)
+			{
+				return "(No Items)";
+			}
+			else if (value == 0)
+			{
+				return "All Done!";
+			}
+			else
+			{
+				return string.Format("{0} Remaining", value);
+			}
 		}
 	}
 }

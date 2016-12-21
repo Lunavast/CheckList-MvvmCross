@@ -1,25 +1,18 @@
 ﻿<Properties StartupConfiguration="{48F91551-02AC-4065-AB63-87D662BF5D64}|Default">
   <MonoDevelop.Ide.ItemProperties.Checklist.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.BDA67792-0CAF-49A4-B103-11A685DF6253" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Checklist.iOS/Views/ItemDetailView.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Checklist.iOS/Views/Cells/CheckListCell.cs">
     <Files>
+      <File FileName="Checklist.Core/ViewModels/ChooseIconViewModel.cs" Line="49" Column="57" />
+      <File FileName="Checklist.Core/ViewModels/CheckListDetailViewModel.cs" Line="23" Column="28" />
+      <File FileName="Checklist.Core/ViewModels/CheckListViewModel.cs" Line="90" Column="8" />
+      <File FileName="Checklist.iOS/Views/CheckListDetailView.cs" Line="40" Column="13" />
       <File FileName="Checklist.Core/ViewModels/ItemDetailViewModel.cs" Line="45" Column="16" />
-      <File FileName="Checklist.Core/ViewModels/CheckListViewModel.cs" Line="35" Column="36" />
-      <File FileName="Checklist.Core/ViewModels/AllCheckListsViewModel.cs" Line="69" Column="17" />
-      <File FileName="Checklist.Core/ViewModels/CheckListDetailViewModel.cs" Line="40" Column="36" />
-      <File FileName="Checklist.Core/Services/IDataService.cs" Line="26" Column="1" />
-      <File FileName="Checklist.Core/Services/DataService.cs" Line="37" Column="4" />
-      <File FileName="Checklist.Core/Services/IRepository.cs" Line="17" Column="3" />
-      <File FileName="Checklist.Core/Services/Repository.cs" Line="25" Column="3" />
-      <File FileName="Checklist.iOS/Views/CheckListView.cs" Line="68" Column="3" />
-      <File FileName="Checklist.Core/Converters/BoolValueConverter.cs" Line="8" Column="1" />
-      <File FileName="Checklist.Core/Converters/ItemsValueConverter.cs" Line="12" Column="3" />
-      <File FileName="Checklist.Core/Models/CheckList.cs" Line="16" Column="2" />
-      <File FileName="Checklist.Core/Models/CheckListItem.cs" Line="17" Column="1" />
-      <File FileName="Checklist.iOS/Views/AllCheckListsView.cs" Line="74" Column="3" />
-      <File FileName="Checklist.iOS/Views/CheckListDetailView.cs" Line="36" Column="32" />
-      <File FileName="Checklist.iOS/Views/Cells/CheckListCell.cs" Line="28" Column="4" />
-      <File FileName="Checklist.iOS/Views/Cells/CheckListItemCell.cs" Line="24" Column="1" />
-      <File FileName="Checklist.iOS/Views/ItemDetailView.cs" Line="39" Column="22" />
+      <File FileName="Checklist.iOS/Views/ItemDetailView.cs" Line="39" Column="16" />
+      <File FileName="Checklist.iOS/Views/ChooseIconView.cs" Line="21" Column="4" />
+      <File FileName="Checklist.iOS/Views/CheckListView.cs" Line="68" Column="1" />
+      <File FileName="Checklist.iOS/Converters/NameToImageValueConverter.cs" Line="11" Column="4" />
+      <File FileName="Checklist.iOS/Views/Cells/IconCell.cs" Line="33" Column="1" />
+      <File FileName="Checklist.iOS/Views/Cells/CheckListCell.cs" Line="26" Column="67" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

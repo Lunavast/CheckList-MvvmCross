@@ -143,12 +143,53 @@
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Appointments.imageset\Appointments%402x.png.png" />
+    <ImageAsset Include="Assets.xcassets\Appointments.imageset\Appointments%403x.png.png" />
+    <ImageAsset Include="Assets.xcassets\Appointments.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Chores.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Birthdays.imageset\Birthdays%402x.png.png" />
+    <ImageAsset Include="Assets.xcassets\Birthdays.imageset\Birthdays%403x.png.png" />
+    <ImageAsset Include="Assets.xcassets\Birthdays.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Chores.imageset\Chores%402x.png.png" />
+    <ImageAsset Include="Assets.xcassets\Chores.imageset\Chores%403x.png.png" />
+    <ImageAsset Include="Assets.xcassets\Drinks.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Drinks.imageset\Drinks%402x.png.png" />
+    <ImageAsset Include="Assets.xcassets\Drinks.imageset\Drinks%403x.png.png" />
+    <ImageAsset Include="Assets.xcassets\Folder.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Folder.imageset\Folder%402x.png.png" />
+    <ImageAsset Include="Assets.xcassets\Folder.imageset\Folder%403x.png.png" />
+    <ImageAsset Include="Assets.xcassets\Groceries.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Groceries.imageset\Groceries%402x.png.png" />
+    <ImageAsset Include="Assets.xcassets\Groceries.imageset\Groceries%403x.png.png" />
+    <ImageAsset Include="Assets.xcassets\Inbox.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Inbox.imageset\Inbox%402x.png.png" />
+    <ImageAsset Include="Assets.xcassets\Inbox.imageset\Inbox%403x.png.png" />
+    <ImageAsset Include="Assets.xcassets\NoIcon.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\NoIcon.imageset\No Icon%402x.png.png" />
+    <ImageAsset Include="Assets.xcassets\NoIcon.imageset\No Icon%403x.png.png" />
+    <ImageAsset Include="Assets.xcassets\Photos.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Photos.imageset\Photos%402x.png.png" />
+    <ImageAsset Include="Assets.xcassets\Photos.imageset\Photos%403x.png.png" />
+    <ImageAsset Include="Assets.xcassets\Trips.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Trips.imageset\Trips%402x.png.png" />
+    <ImageAsset Include="Assets.xcassets\Trips.imageset\Trips%403x.png.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Views\" />
     <Folder Include="Presenters\" />
     <Folder Include="Views\Cells\" />
+    <Folder Include="Assets.xcassets\Appointments.imageset\" />
+    <Folder Include="Assets.xcassets\Chores.imageset\" />
+    <Folder Include="Assets.xcassets\Birthdays.imageset\" />
+    <Folder Include="Assets.xcassets\Drinks.imageset\" />
+    <Folder Include="Assets.xcassets\Folder.imageset\" />
+    <Folder Include="Assets.xcassets\Groceries.imageset\" />
+    <Folder Include="Assets.xcassets\Inbox.imageset\" />
+    <Folder Include="Assets.xcassets\NoIcon.imageset\" />
+    <Folder Include="Assets.xcassets\Photos.imageset\" />
+    <Folder Include="Assets.xcassets\Trips.imageset\" />
+    <Folder Include="Converters\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -158,6 +199,8 @@
     <InterfaceDefinition Include="Views\AllCheckListsView.xib" />
     <InterfaceDefinition Include="Views\Cells\CheckListCell.xib" />
     <InterfaceDefinition Include="Views\CheckListDetailView.xib" />
+    <InterfaceDefinition Include="Views\ChooseIconView.xib" />
+    <InterfaceDefinition Include="Views\Cells\IconCell.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -198,6 +241,15 @@
     <Compile Include="Views\CheckListDetailView.designer.cs">
       <DependentUpon>CheckListDetailView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ChooseIconView.cs" />
+    <Compile Include="Views\ChooseIconView.designer.cs">
+      <DependentUpon>ChooseIconView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cells\IconCell.cs" />
+    <Compile Include="Views\Cells\IconCell.designer.cs">
+      <DependentUpon>IconCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\NameToImageValueConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Checklist.Core\Checklist.Core.csproj">

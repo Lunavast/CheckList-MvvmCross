@@ -25,14 +25,17 @@ namespace Checklist.iOS.Views
 		{
 			base.ViewDidLoad();
 			// Perform any additional setup after loading the view, typically from a nib.
+			BindView();
 			ConfigureNavigationView();
-
 			TextField.BecomeFirstResponder();
+		}
 
+		private void BindView()
+		{
 			var set = this.CreateBindingSet<ItemDetailView, ItemDetailViewModel>();
 			set.Bind(TextField).To(vm => vm.Text);
 			set.Bind(DoneItem).For(b => b.Enabled).To(vm => vm.EnableDone);
-
+			
 			set.Apply();
 		}
 

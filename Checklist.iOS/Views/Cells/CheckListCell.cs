@@ -22,8 +22,9 @@ namespace Checklist.iOS.Cells
 			this.SelectionStyle = UITableViewCellSelectionStyle.None;
 			this.DelayBind(() =>
 			{
-				this.CreateBinding(TextLabel).To((CheckList l) => l.Name).Apply();
-				this.CreateBinding(DetailTextLabel).To((CheckList l) => l.ToDo).WithConversion("Items").Apply();
+				this.CreateBinding(ChecklistTitle).To((CheckList l) => l.Name).Apply();
+				this.CreateBinding(ChecklistTasksLabel).To((CheckList l) => l.ToDo).WithConversion("Items").Apply();
+				this.CreateBinding(ChecklistImageView).To((CheckList l) => l.IconName).WithConversion("NameToImage").Apply();
 			});
 		}
 	}

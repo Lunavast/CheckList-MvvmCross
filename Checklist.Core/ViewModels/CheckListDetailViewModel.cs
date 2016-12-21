@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Input;
+using Checklist.Core.Messenger;
 using Checklist.Core.Models;
 using Checklist.Core.Services;
 using MvvmCross.Core.ViewModels;
+using MvvmCross.Plugins.Messenger;
 
 namespace Checklist.Core.ViewModels
 {
@@ -10,11 +13,18 @@ namespace Checklist.Core.ViewModels
 	{
 		private Mode _mode;
 		private readonly IDataService _dataService;
-		public CheckListDetailViewModel(IDataService dataService)
+		private readonly MvxSubscriptionToken _token;
+		public CheckListDetailViewModel(IDataService dataService, IMvxMessenger messenger)
 		{
 			_dataService = dataService;
+			_token = messenger.SubscribeOnMainThread<IconChangeMessage>(OnIconChange);
 		}
-		
+
+		void OnIconChange(Messenger.IconChangeMessage obj)
+		{
+			Item.IconName = obj.Icon.Name;
+		}
+
 		public class Nav
 		{
 			public int CheckListId { get; set; }
@@ -37,13 +47,7 @@ namespace Checklist.Core.ViewModels
 				Title = "Edit checklist";
 			}
 		}
-
-		private string _title;
-		public string Title
-		{
-			get { return _title; }
-			set { _title = value; RaisePropertyChanged(() => Title); }
-		}
+		public string Title { get; set; }
 
 		public bool EnableDone
 		{
@@ -100,6 +104,21 @@ namespace Checklist.Core.ViewModels
 				_dataService.UpdateCheckList(Item);
 			}
 			Close(this);
+		}
+
+		private MvxCommand _chooseIconCommand;
+		public ICommand ChooseIconCommand
+		{
+			get
+			{
+				_chooseIconCommand = _chooseIconCommand ?? new MvxCommand(DoChooseIconCommand);
+				return _chooseIconCommand;
+			}
+		}
+
+		private void DoChooseIconCommand()
+		{
+			ShowViewModel<ChooseIconViewModel>();
 		}
 	}
 }

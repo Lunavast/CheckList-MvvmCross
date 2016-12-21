@@ -43,6 +43,9 @@
     <Compile Include="Models\CheckList.cs" />
     <Compile Include="ViewModels\CheckListDetailViewModel.cs" />
     <Compile Include="Converters\ItemsValueConverter.cs" />
+    <Compile Include="ViewModels\ChooseIconViewModel.cs" />
+    <Compile Include="Models\Icon.cs" />
+    <Compile Include="Messenger\IconChangeMessage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Platform">

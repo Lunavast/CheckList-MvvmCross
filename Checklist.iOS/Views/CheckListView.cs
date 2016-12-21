@@ -29,10 +29,7 @@ namespace Checklist.iOS.Views
 		{
 			base.ViewDidLoad();
 			// Perform any additional setup after loading the view, typically from a nib.
-			this.Title = ViewModel.Title;
-
 			ConfigureNavigationView();
-
 			ConfigureTableView();
 		}
 
@@ -58,6 +55,8 @@ namespace Checklist.iOS.Views
 
 		private void ConfigureNavigationView()
 		{
+			this.Title = ViewModel.Title;
+			
 			var PlusItem = new UIBarButtonItem(UIBarButtonSystemItem.Add, AddItemHandler);
 			this.NavigationItem.RightBarButtonItem = PlusItem;
 		}
@@ -65,11 +64,6 @@ namespace Checklist.iOS.Views
 		void AddItemHandler(object sender, EventArgs e)
 		{
 			ViewModel.PopItemCommand.Execute(null);
-		}
-
-		void HandleAction(UITableView arg1, UITableViewCellEditingStyle arg2, NSIndexPath arg3)
-		{
-
 		}
 
 		private class CheckListSource : MvxSimpleTableViewSource

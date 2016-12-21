@@ -42,13 +42,7 @@ namespace Checklist.Core.ViewModels
 				Title = "Edit item";
 			}
 		}
-
-		private string _title;
-		public string Title
-		{
-			get { return _title; }
-			set { _title = value; RaisePropertyChanged(() => Title); }
-		}
+		public string Title { get; set; }
 
 		public bool EnableDone
 		{

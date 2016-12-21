@@ -72,9 +72,16 @@ namespace Checklist.Core.Services
 			return _connection.Query<CheckListItem>("select * from CheckListItem where CheckListId = ?", checkList.Id).ToList();
 		}
 
-		public List<CheckListItem> GetToDoCheckListItems(CheckList checkList)
+		public int GetToDoCountCheckListItems(CheckList checkList)
 		{
-			return _connection.Query<CheckListItem>("select * from CheckListItem where CheckListId = ? and Done = 0", checkList.Id).ToList();
+			if (this.GetCheckListItems(checkList).Count == 0)
+			{
+				return -1;
+			}
+			else
+			{
+				return _connection.Query<CheckListItem>("select * from CheckListItem where CheckListId = ? and Done = 0", checkList.Id).ToList().Count;
+			}
 		}
 	}
 }

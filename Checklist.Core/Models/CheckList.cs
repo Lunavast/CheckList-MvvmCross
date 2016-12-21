@@ -11,6 +11,13 @@ namespace Checklist.Core.Models
 		public int Id { set; get; }
 
 		public string Name { get; set; }
+		public string IconName { get; set; }
 		public int ToDo { get; set; }
+
+		public CheckList()
+		{
+			this.ToDo = -1;
+			this.IconName = "NoIcon";
+		}
 	}
 }
