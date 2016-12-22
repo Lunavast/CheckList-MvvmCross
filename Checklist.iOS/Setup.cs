@@ -1,6 +1,9 @@
+using Checklist.Core.Services;
+using Checklist.iOS.Services;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.iOS.Platform;
 using MvvmCross.iOS.Views.Presenters;
+using MvvmCross.Platform;
 using MvvmCross.Platform.Platform;
 using UIKit;
 
@@ -27,5 +30,11 @@ namespace Checklist.iOS
         {
             return new DebugTrace();
         }
+
+		protected override void InitializeFirstChance()
+		{
+			Mvx.RegisterSingleton<ILocalNotificationService>(new LocalNotificationService());
+			base.InitializeFirstChance();
+		}
     }
 }

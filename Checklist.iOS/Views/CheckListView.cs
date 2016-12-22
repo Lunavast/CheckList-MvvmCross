@@ -78,7 +78,7 @@ namespace Checklist.iOS.Views
 			public override void CommitEditingStyle(UITableView tableView, UITableViewCellEditingStyle editingStyle, NSIndexPath indexPath)
 			{
 				CheckListItem item = _vm.Items[indexPath.Row];
-				new LocalNotificationService().CancelNotification(item);
+				//new LocalNotificationService().CancelNotification(item);
 				_vm.DataService.DeleteItem(item);
 			}
 		}

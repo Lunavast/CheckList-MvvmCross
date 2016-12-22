@@ -47,6 +47,7 @@
     <Compile Include="Models\Icon.cs" />
     <Compile Include="Messenger\IconChangeMessage.cs" />
     <Compile Include="Converters\DueDateValueConverter.cs" />
+    <Compile Include="Services\ILocalNotificationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Platform">

@@ -1,7 +1,9 @@
 ﻿using System;
 using Checklist.Core.Models;
+using Checklist.Core.Services;
 using Foundation;
 using UIKit;
+using Checklist.iOS.Extensions;
 
 namespace Checklist.iOS.Services
 {
@@ -14,13 +16,18 @@ namespace Checklist.iOS.Services
 			UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
 		}
 
-		public void ScheduleNotification(CheckListItem item, NSDate time)
+		public void ScheduleNotification(CheckListItem item)
 		{
-			CancelNotification(item);
+			if (item.Reminder == null)
+			{
+				CancelNotification(item);
+				return;
+			}
 
+			CancelNotification(item);
 			var LocalNotification = new UILocalNotification()
 			{
-				FireDate = time,
+				FireDate = item.Reminder.Value.ToNSDate(),
 				TimeZone = NSTimeZone.DefaultTimeZone,
 				AlertBody = item.Text,
 				SoundName = UILocalNotification.DefaultSoundName,
@@ -29,7 +36,7 @@ namespace Checklist.iOS.Services
 			UIApplication.SharedApplication.ScheduleLocalNotification(LocalNotification);
 		}
 
-		public UILocalNotification NotificationForItem(CheckListItem item)
+		private UILocalNotification NotificationForItem(CheckListItem item)
 		{
 			var AllNotifications = UIApplication.SharedApplication.ScheduledLocalNotifications;
 

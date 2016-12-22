@@ -263,7 +263,6 @@
     <Compile Include="Converters\NameToImageValueConverter.cs" />
     <Compile Include="Extensions\NSDateExtiensions.cs" />
     <Compile Include="Services\LocalNotificationService.cs" />
-    <Compile Include="Services\ILocalNotificationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Checklist.Core\Checklist.Core.csproj">

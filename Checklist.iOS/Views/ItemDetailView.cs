@@ -117,7 +117,7 @@ namespace Checklist.iOS.Views
 
 		void DoneItemHandler(object sender, EventArgs e)
 		{
-			new LocalNotificationService().ScheduleNotification(ViewModel.Item, DatePicker.Date);
+			//new LocalNotificationService().ScheduleNotification(ViewModel.Item);
 			TextField.ResignFirstResponder();
 			ViewModel.DoneCommand.Execute(null);
 		}
